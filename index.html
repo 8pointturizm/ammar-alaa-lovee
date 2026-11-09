@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#160610">
+
+    <title>رسالة خاصة ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main id="app">
+
+        <!-- الصفحة الأولى -->
+        <section id="welcome-page">
+
+            <p>♡ رسالة خاصة ♡</p>
+
+            <h1>نورتي قلب عمار</h1>
+
+            <h2>(يلي هيا الاء)</h2>
+
+            <p class="letter-content">
+                كي تتخلي انقري على القلب
+            </p>
+
+            <button class="main-heart" onclick="openLetter()">
+                ❤️
+            </button>
+
+            <p>اضغطي على القلب للمتابعة</p>
+
+        </section>
+
+
+        <!-- الصفحة الثانية: الاعتذار -->
+        <section id="letter-page" class="hidden">
+
+            <h1>إلى أميرتي</h1>
+
+            <div class="letter-content">
+
+                <p>اسف يقلبي ما كان قصدي زعلك</p>
+
+                <p>مافي غيرك بقلبي انتي الوحيدة يلي احبها</p>
+
+                <p>
+                    اتمنى تعرفي اني بحياتي ما كان قصدي ازعلك
+                </p>
+
+                <p>
+                    كان قصدي بس مزح بس شكلك اخذي الموظوع على جد
+                </p>
+
+                <p>
+                    المهم يا اميرتي انتي اتمنى تسامحيني
+                </p>
+
+                <p>
+                    وتقبلي هلرساله البسيطه مني
+                </p>
+
+                <p>اسف يقلبي</p>
+
+                <p class="love-text">
+                    احبجيي 🫶❤️
+                </p>
+
+            </div>
+
+            <button class="secret-box" onclick="openPassword()">
+                💌 رسالة مخفية
+            </button>
+
+        </section>
+
+
+        <!-- نافذة كلمة السر -->
+        <div id="password-popup" class="popup-overlay hidden">
+
+            <div class="popup-content">
+
+                <h2>رسالة إلك وحدك 💗</h2>
+
+                <p>اكتبي كلمة السر يا أميرتي</p>
+
+                <input
+                    type="password"
+                    id="password"
+                    class="password-input"
+                    placeholder="كلمة السر"
+                    inputmode="decimal"
+                >
+
+                <p id="error"></p>
+
+                <button class="confirm-btn" onclick="checkPassword()">
+                    افتحي الرسالة ❤️
+                </button>
+
+                <button onclick="closePassword()">
+                    إغلاق
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- الرسالة السرية -->
+        <section id="secret-page" class="hidden">
+
+            <h1>إلى أميرتي وحدها 💗</h1>
+
+            <div class="letter-content">
+
+                <p>يروحيي اسف</p>
+
+                <p>استني كم شهر</p>
+
+                <p>رح نسيكي كلشي</p>
+
+                <p>لمن اجي</p>
+
+                <p>و رح تخسري بالتحدي</p>
+
+                <p>يلي بيناتنا</p>
+
+                <p>لا تنسي</p>
+
+                <p>مافي غيرك بحياتي</p>
+
+            </div>
+
+            <h2>🫶❤️</h2>
+
+            <button onclick="closeSecret()">
+                إغلاق
+            </button>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

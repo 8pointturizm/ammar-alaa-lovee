@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Amiri:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink: #ff8bb7;
+    --light-pink: #ffdce9;
+    --wine: #5b1735;
+    --gold: #e9c49b;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100svh;
+    background:
+        radial-gradient(circle at top, #51152f, transparent 60%),
+        linear-gradient(145deg, #10040b, #260b1b, #10040b);
+    color: white;
+    font-family: 'Cairo', sans-serif;
+    overflow-x: hidden;
+}
+
+#app {
+    width: 100%;
+    min-height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 15px;
+}
+
+#welcome-page,
+#letter-page,
+#secret-page {
+    width: 100%;
+    max-width: 440px;
+    text-align: center;
+    padding: 30px 22px;
+    border-radius: 28px;
+    border: 1px solid rgba(255, 174, 203, 0.25);
+    background: rgba(255, 255, 255, 0.055);
+    box-shadow: 0 0 45px rgba(255, 50, 120, 0.12);
+    backdrop-filter: blur(15px);
+    animation: fadeIn 1s ease;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* العناوين */
+
+h1, h2 {
+    font-family: 'Amiri', serif;
+    color: var(--light-pink);
+}
+
+h1 {
+    font-size: 37px;
+    line-height: 1.7;
+}
+
+h2 {
+    font-size: 29px;
+}
+
+/* القلب */
+
+.main-heart {
+    font-size: 95px;
+    color: #ff659e;
+    text-shadow: 0 0 20px #ff438b, 0 0 55px #ff438b;
+    animation: heartbeat 1.4s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+/* الأزرار */
+
+button {
+    font-family: 'Cairo', sans-serif;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* نصوص الرسالة */
+
+.letter-content {
+    color: #ffe8f0;
+    font-size: 16px;
+    line-height: 2.3;
+    margin-top: 22px;
+}
+
+.letter-content p {
+    margin-bottom: 15px;
+}
+
+.love-text {
+    color: #ff9cbd;
+    font-size: 23px;
+    font-weight: 800;
+    margin-top: 20px;
+}
+
+/* الرسالة المخفية */
+
+.secret-box {
+    position: fixed;
+    bottom: 22px;
+    left: 15px;
+    z-index: 5;
+    background: linear-gradient(135deg, #8f2451, #e84c89);
+    color: white;
+    padding: 11px 16px;
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 14px;
+    box-shadow: 0 0 22px rgba(255, 70, 140, .35);
+    animation: glow 2s infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 12px rgba(255, 70, 140, .25);
+    }
+    50% {
+        box-shadow: 0 0 28px rgba(255, 70, 140, .65);
+    }
+}
+
+/* كلمة السر */
+
+.password-input {
+    width: 100%;
+    padding: 15px;
+    margin-top: 22px;
+    border-radius: 14px;
+    border: 1px solid #a64c70;
+    background: rgba(255,255,255,.07);
+    color: white;
+    text-align: center;
+    font-size: 22px;
+    letter-spacing: 5px;
+    outline: none;
+    direction: ltr;
+}
+
+/* النوافذ */
+
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    background: rgba(0,0,0,.82);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px;
+    backdrop-filter: blur(10px);
+}
+
+.popup-content {
+    width: 100%;
+    max-width: 370px;
+    padding: 28px 20px;
+    border-radius: 24px;
+    background: linear-gradient(145deg, #52152f, #1a0712);
+    border: 1px solid rgba(255,150,190,.35);
+    animation: popupIn .4s ease;
+}
+
+@keyframes popupIn {
+    from {
+        opacity: 0;
+        transform: scale(.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* الخلفية المتحركة */
+
+.floating-heart {
+    position: fixed;
+    bottom: -40px;
+    z-index: 0;
+    color: #ff83ad;
+    pointer-events: none;
+    animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* ظهور الصفحات */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 380px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    #welcome-page,
+    #letter-page,
+    #secret-page {
+        padding: 25px 16px;
+    }
+
+    .letter-content {
+        font-size: 14px;
+    }
+}
+/* تنسيق الصفحة الأولى */
+
+#welcome-page {
+    min-height: 570px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 13px;
+    position: relative;
+    overflow: hidden;
+}
+
+#welcome-page > p:first-child {
+    color: #e9c49b;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+#welcome-page h1 {
+    font-size: 38px;
+    color: #ffdce9;
+    text-shadow: 0 0 20px rgba(255, 100, 160, .5);
+}
+
+#welcome-page h2 {
+    color: #ff9cbd;
+    font-size: 27px;
+}
+
+#welcome-page .letter-content {
+    font-size: 17px;
+    color: #f5c8da;
+}
+
+/* القلب الكبير */
+
+.main-heart {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    filter: drop-shadow(0 0 18px #ff438b);
+    transition: .3s;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.main-heart:active {
+    transform: scale(.8);
+}
+
+/* صفحة الاعتذار */
+
+#letter-page {
+    position: relative;
+    padding-bottom: 105px;
+}
+
+#letter-page h1 {
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(255, 130, 180, .3);
+}
+
+#letter-page .letter-content {
+    padding: 12px 4px;
+}
+
+#letter-page .letter-content p {
+    border-bottom: 1px solid rgba(255, 170, 200, .08);
+    padding-bottom: 9px;
+    animation: fadeIn 1s ease both;
+}
+
+/* الرسالة المخفية */
+
+.secret-box {
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'Cairo', sans-serif;
+    min-width: 155px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.secret-box:active {
+    transform: scale(.94);
+}
+
+/* أزرار النوافذ */
+
+.confirm-btn,
+#password-popup button:not(.confirm-btn) {
+    width: 100%;
+    padding: 13px;
+    margin-top: 12px;
+    border: 1px solid rgba(255, 180, 210, .25);
+    border-radius: 13px;
+    color: white;
+    background: linear-gradient(120deg, #a52659, #e84d8b);
+    font-size: 15px;
+    font-weight: bold;
+    font-family: 'Cairo', sans-serif;
+    cursor: pointer;
+}
+
+#password-popup button:not(.confirm-btn) {
+    background: rgba(255,255,255,.07);
+}
+
+/* رسالة الخطأ */
+
+#error {
+    color: #ff9bb7;
+    font-size: 13px;
+    min-height: 22px;
+    margin-top: 10px;
+}
+
+/* الصفحة السرية */
+
+#secret-page {
+    padding: 35px 20px;
+}
+
+#secret-page h1 {
+    margin-bottom: 25px;
+}
+
+#secret-page .letter-content {
+    padding: 15px 10px;
+    border-radius: 18px;
+    background: rgba(255, 150, 190, .07);
+}
+
+#secret-page .letter-content p {
+    color: #ffe0eb;
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+#secret-page > button {
+    width: 100%;
+    padding: 13px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(120deg, #a52659, #e84d8b);
+    color: white;
+    font-size: 16px;
+}
+
+/* حركة ظهور الصفحة */
+
+#letter-page,
+#secret-page {
+    animation: fadeIn 1s ease;
+}
+
+/* الهاتف */
+
+@media (max-width: 430px) {
+    #app {
+        padding: 15px 10px;
+    }
+
+    #welcome-page,
+    #letter-page,
+    #secret-page {
+        border-radius: 24px;
+    }
+
+    #welcome-page {
+        min-height: 540px;
+    }
+
+    #welcome-page h1 {
+        font-size: 32px;
+    }
+
+    .main-heart {
+        font-size: 85px;
+    }
+
+    .secret-box {
+        bottom: 18px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .secret-box:active {
+        transform: translateX(-50%) scale(.94);
+    }
+}
+
+button {
+    -webkit-tap-highlight-color: transparent;
+}
